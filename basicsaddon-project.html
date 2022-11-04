@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connected Cooking</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: rgb(240, 228, 213)
+      }
+      .container {
+        background-color: rgb(249, 246, 242);
+        max-width: 700px;
+        display: block;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .container img {
+        max-width: 100%;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        border: 0.5px solid rgb(184, 166, 107);
+        border-radius: 5px;
+        background-color: rgb(119, 91, 57);
+        padding: 5px 10px;
+        color: white;
+        transition: all 150ms ease-in-out;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: rgb(212, 184, 113, 0.4);
+        color: black;
+      }
+      div button {
+        background-color: rgb(212, 184, 113, 0.4);
+        color: black;
+      }
+      div button:hover {
+        background-color: rgb(119, 91, 57);
+        color: white;
+      }
+      .different-breads {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+      .different-breads:hover {
+        filter: contrast(70%);
+        transform: scale(1.2);
+      }
+      .grid {
+        display: grid;
+        margin: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .grid img {
+        max-width: 100%;
+        border-radius: 20px;
+      }
+      .grid img:hover {
+        transform: scale(1.5);
+      }
+      .dark {
+        background-color: rgb(119, 91, 57);
+        color: white;
+      }
+      .dark .container {
+        background-color: rgb(149, 117, 78);
+        color: white;
+      }
+    </style>
+  </head>
+  <body >
+    <button id="dark-theme">Dark Theme</button>
+    <br />
+
+    <div class="container">
+      <h1>Connected Cooking</h1>
+      <h2>Water, Flour, Salt</h2>
+      <p>
+        With these three simple ingredients, cultures across the globe have put
+        their own spin on creating various dishes that connect us all. For some,
+        these ingredients come together to make flatbread, for others, pita, yet
+        others a sourdough boule.
+      </p>
+      <a href="https://www.cookbookcooks.com/cooking-classes" target="_blank"
+        ><img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/691/original/post1403.jpg?1667098793"
+          alt="different breads"
+          class="different-breads"
+        />
+      </a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/692/original/six-wheat-and-rye-sourdough-boules-2-amy-e-fraser.jpg?1667098805"
+          alt="sourdough boule"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/690/original/pita-bread-4.jpg?1667098782"
+          alt="pita"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/824/original/naan-thumb.jpeg?1667161548"
+          alt="naan"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/050/689/original/Homemade-Flour-Tortilla-Wraps-SQ.jpg?1667098757"
+          alt="tortillas"
+        />
+      </div>
+      <br />
+      <br />
+      <button>Learn to bake</button>
+    </div>
+    <p>Coded by Samantha Thibault</p>
+
+    <script>
+      function changeTheme() {
+        document.querySelector("body").classList.toggle("dark");
+        if (document.querySelector("body").classList.contains("dark")) {
+          document.querySelector("#dark-theme").innerHTML = "Light Theme";
+        } else {
+          document.querySelector("#dark-theme").innerHTML = "Dark Theme";
+        }
+      }
+
+      let darkTheme = document.querySelector("#dark-theme");
+      darkTheme.addEventListener("click", changeTheme);
+    </script>
+  </body>
+</html>
